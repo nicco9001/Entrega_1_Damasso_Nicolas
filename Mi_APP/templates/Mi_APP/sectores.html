@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listar_Reclutadores</title>
+    <title>Sectores</title>
 </head>
 <body>
     {% extends 'Mi_App/base.html' %}
     {% block cuerpo %}
     <ul>
-        {% for elemento in reclutadores %}
+        {% for elemento in Sectores %}
             <li>
-                Nombre: {{elemento.nombre_r}}, 
-                Apellido: {{elemento.apellido_r}}, 
-                DNI: {{elemento.DNI_r}}
+                Nombre: {{elemento.nombre_sector}}, 
+                Turno: {{elemento.turno}}, 
+                Modalidad: {{elemento.modalidad}}
             </li>
         {% endfor %}
         </ul>

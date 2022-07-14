@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Mi_APP.views import (listar_reclutadores, mostrar_Mensajes, mostrar_Otros, mostrar_Perfil)
+from Mi_APP.views import (index, listar_reclutadores, listar_candidatos, sectores)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path( 'listar_reclutadores/', listar_reclutadores),
-    path('mensajes/', mostrar_Mensajes),
-    path('otros/', mostrar_Otros),
-    path('perfil/', mostrar_Perfil),
+    path('', index, name= "HOME"),
+    path( 'listar_reclutadores/', listar_reclutadores, name= "Lista Reclutadores"),
+    path( 'listar_candidatos/', listar_candidatos, name= "Lista Candidatos"),
+    path( 'sectores/', sectores, name= "Sectores"),
 ]

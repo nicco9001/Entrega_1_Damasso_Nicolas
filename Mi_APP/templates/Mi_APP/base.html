@@ -14,10 +14,12 @@
  <!-- HEADER, esto es un Menú/barra de navegación -->
 
 <ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Perfil</a></li>
-  <li role="presentation"><a href="#">Mensajes</a></li>
-  <li role="presentation"><a href="#">Otros</a></li>
+  <li role="presentation" class="active"><a href="{% url 'HOME' %}">Home</a></li>
+  <li role="presentation"><a href="#">Registro Reclutador</a></li>
+  <li role="presentation"><a href="{% url 'Lista Reclutadores'%}">Lista Reclutadores</a></li>
+  <li role="presentation"><a href="#">Registro Candidato</a></li>
+  <li role="presentation"><a href="{% url 'Lista Candidatos' %}">Lista Candidatos</a></li>
+  <li role="presentation"><a href="{% url 'Sectores' %}">Sectores</a></li>
 </ul>
 
 {% block cuerpo %}
