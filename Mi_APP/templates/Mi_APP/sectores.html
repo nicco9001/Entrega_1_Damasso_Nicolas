@@ -7,17 +7,18 @@
     <title>Sectores</title>
 </head>
 <body>
-    {% extends 'Mi_App/base.html' %}
+    {% extends 'Mi_APP/base.html' %}
     {% block cuerpo %}
+    <br>
     <ul>
-        {% for elemento in Sectores %}
+        {% for elemento in sectores %}
             <li>
                 Nombre: {{elemento.nombre_sector}}, 
                 Turno: {{elemento.turno}}, 
                 Modalidad: {{elemento.modalidad}}
             </li>
         {% endfor %}
-        </ul>
+    </ul>
     {% endblock %}
 </body>
 </html>

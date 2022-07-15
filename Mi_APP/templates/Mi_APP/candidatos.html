@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista Candidatos</title>
 </head>
 <body>
     {% extends 'Mi_APP/base.html' %}
     {% block cuerpo %}
 
-        {% if formReclu.errors %}
+        {% if formCand.errors %}
         <p style="color: darkred;"> Revise los datos ingresados.</p>
         {% endif %}
 
         <form action="" method="POST">
             {%csrf_token%}
             <table>
-                {{formReclu.as_table}}
+                {{formCand.as_table}}
                 <button type="submit"> ENVIAR</button>
             </table>
         </form>

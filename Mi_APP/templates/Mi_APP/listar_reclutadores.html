@@ -7,14 +7,15 @@
     <title>Listar_Reclutadores</title>
 </head>
 <body>
-    {% extends 'Mi_App/base.html' %}
+    {% extends 'Mi_APP/base.html' %}
     {% block cuerpo %}
+    <br>
     <ul>
         {% for elemento in reclutadores %}
             <li>
-                Nombre: {{elemento.nombre_r}}, 
-                Apellido: {{elemento.apellido_r}}, 
-                DNI: {{elemento.DNI_r}}
+                Nombre: {{elemento.nombre}}, 
+                Apellido: {{elemento.apellido}}, 
+                DNI: {{elemento.DNI}}
             </li>
         {% endfor %}
         </ul>

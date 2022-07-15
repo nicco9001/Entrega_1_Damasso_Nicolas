@@ -1,9 +1,9 @@
 from django.db import models
 
 class Reclutadores(models.Model):
-    nombre_r = models.CharField(max_length=40)
-    apellido_r = models.CharField(max_length=40)
-    DNI_r = models.IntegerField()
+    nombre = models.CharField(max_length=40)
+    apellido = models.CharField(max_length=40)
+    DNI = models.IntegerField()
 
     def __str__(self):
         return f"{self.nombre_r} {self.apellido_r} {self.DNI_r}"
