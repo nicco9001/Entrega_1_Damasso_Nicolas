@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    {% extends 'Mi_APP/base.html' %}
+    {% block cuerpo %}
+    <br>
+        <h2><p style="color: darkblue;"> Busqueda de Candidato por APELLIDO </p></h2>
+    <br>
+        <form action="" method="GET">
+            {{formulario_busqueda}}
+            <button type="submit">Buscar</button>
+        </form>
+        <br>
+        {% if resultado %} <!--Es la variable del views.py-->
+            <ul>
+            {% for candidato in resultado %}
+                <li>El candidato {{candidato.nombre}} {{candidato.apellido}} DNI {{candidato.DNI}} esta registrado.- </li>   
+            {% endfor %}
+            </ul>
+        {% else %}
+            <h2> NO se ha encontrado el Candidato.- </h2>
+        {% endif %}
+
+    {% endblock %}
+</body>
+</html>

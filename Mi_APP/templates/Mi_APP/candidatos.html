@@ -9,11 +9,11 @@
 <body>
     {% extends 'Mi_APP/base.html' %}
     {% block cuerpo %}
-
+    <br>
         {% if formCand.errors %}
         <p style="color: darkred;"> Revise los datos ingresados.</p>
         {% endif %}
-
+    
         <form action="" method="POST">
             {%csrf_token%}
             <table>
@@ -21,7 +21,7 @@
                 <button type="submit"> ENVIAR</button>
             </table>
         </form>
-
+    
     {% endblock %}
 </body>
 </html>

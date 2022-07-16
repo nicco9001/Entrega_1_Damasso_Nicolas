@@ -9,3 +9,6 @@ class formCandidatos(forms.Form):
     nombre = forms.CharField(max_length=40)
     apellido = forms.CharField(max_length=40)
     DNI = forms.IntegerField()
+
+class busquedaCand_form(forms.Form):
+    criterio = forms.CharField()

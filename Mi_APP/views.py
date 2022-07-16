@@ -2,10 +2,11 @@ from multiprocessing import context
 from django.shortcuts import render
 from django.http import HttpResponse
 from Mi_APP.models import Candidatos, Reclutadores, Sectores
-from Mi_APP.forms import formReclutadores, formCandidatos
+from Mi_APP.forms import formReclutadores, formCandidatos, busquedaCand_form
 
 def index(request):
     return render (request, "Mi_APP/index.html", {})
+
 
 def form_Reclutadores(request):
     if request.method == 'POST':
@@ -44,10 +45,23 @@ def listar_reclutadores(request):
     context["reclutadores"] = Reclutadores.objects.all() #modelo #diccionario
     return render (request, 'Mi_APP/listar_reclutadores.html', context)
 
+
 def listar_candidatos(request):
     context = {}
     context["lista_candidatos"] = Candidatos.objects.all()
     return render (request, 'Mi_APP/listar_candidatos.html', context)
+
+
+def buscar_candidato(request):
+    formulario_busqueda = busquedaCand_form()
+
+    if request.GET:    
+        resultado = Candidatos.objects.filter(apellido=request.GET["criterio"]).all()
+        return render (request, "Mi_APP/busqueda_candidatos.html", {"formulario_busqueda" : formulario_busqueda, "resultado" : resultado})
+    else:
+        resultado = []
+    return render (request, "Mi_APP/busqueda_candidatos.html", {"formulario_busqueda" : formulario_busqueda, "resultado" : resultado})
+
 
 def sectores (request):
     context = {}

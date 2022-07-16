@@ -11,7 +11,7 @@
     {% block cuerpo %}
     <br>
     <ul>
-        {% for elemento in lista_candidatos %}
+        {% for elemento in lista_candidatos %} <!--Es el KEY que viene del views.py-->
             <li>
                 Nombre: {{elemento.nombre}}, 
                 Apellido: {{elemento.apellido}}, 
